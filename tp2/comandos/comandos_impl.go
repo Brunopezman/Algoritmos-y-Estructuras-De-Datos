@@ -108,18 +108,6 @@ func (detector *detectorLogs) AgregarArchivo(ruta string) ([]string, error) {
 	return dos, nil
 }
 
-// func (detector *detectorLogs) DOS() []string {
-// 	var dos []string
-// 	for iter := detector.visitantes.Iterador(); iter.HaySiguiente(); iter.Siguiente() {
-// 		ip, listaTiempo := iter.VerActual()
-// 		if esMenorADos(listaTiempo) {
-// 			dos = append(dos, ip)
-// 		}
-// 	}
-
-// 	return dos
-// }
-
 func esMenorADos(listaTiempo []time.Time) bool {
 	if len(listaTiempo) >= 5 {
 		inicio := 0
@@ -171,15 +159,3 @@ func (d *detectorLogs) VerMasVisitados(n int) []parSitioVisitas {
 func (par *parSitioVisitas) VerPar() (string, int) {
 	return par.sitio, par.visitas
 }
-
-// func (d *detectorLogs) VaciarServidor() {
-
-// 	for iter := d.visitantes.Iterador(); iter.HaySiguiente(); iter.Siguiente() {
-// 		ip, _ := iter.VerActual()
-// 		d.visitantes.Borrar(ip)
-// 	}
-// 	for iter := d.sitios_visitados.Iterador(); iter.HaySiguiente(); iter.Siguiente() {
-// 		sitio, _ := iter.VerActual()
-// 		d.sitios_visitados.Borrar(sitio)
-// 	}
-// }
